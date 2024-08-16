@@ -29,9 +29,30 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = BASE_DIR / "staticfiles" 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = ['*']
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS'
+]
+
+CORS_ALLOWED_HEADERS = [
+    'authorization',
+    'content-type',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +63,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'patients',
     "whitenoise.runserver_nostatic",
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +76,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware'
 ]
 
 ROOT_URLCONF = 'api_paciente.urls'
