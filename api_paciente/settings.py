@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3+5o*id#$j-u2-z39fuxf4_r=37if=-bp$+u^5zj=ke$7b6m!$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = BASE_DIR / "staticfiles" 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
