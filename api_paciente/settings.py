@@ -31,8 +31,6 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ALLOWED_ORIGINS = ['*']
-
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_METHODS = [
