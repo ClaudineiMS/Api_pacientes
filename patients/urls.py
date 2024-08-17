@@ -1,10 +1,16 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import PacienteViewSet
-
-router = DefaultRouter()
-router.register(r'cadastrar', PacienteViewSet)
+from django.urls import path
+from .views import (
+    PacienteListView,
+    PacienteCreateView,
+    PacienteDetailView,
+    PacienteUpdateView,
+    PacienteDeleteView
+)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('pacientes/', PacienteListView.as_view(), name='paciente-list'),      # Lista todos os pacientes
+    path('pacientes/novo/', PacienteCreateView.as_view(), name='paciente-create'),  # Cria um novo paciente
+    path('pacientes/<int:pk>/', PacienteDetailView.as_view(), name='paciente-detail'),  # Detalha um paciente específico
+    path('pacientes/<int:pk>/editar/', PacienteUpdateView.as_view(), name='paciente-update'),  # Atualiza um paciente específico
+    path('pacientes/<int:pk>/deletar/', PacienteDeleteView.as_view(), name='paciente-delete'),  # Deleta um paciente específico
 ]
