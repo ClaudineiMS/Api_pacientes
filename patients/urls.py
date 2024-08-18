@@ -8,9 +8,9 @@ from .views import (
 )
 
 urlpatterns = [
-    path('pacientes/', PacienteListView.as_view(), name='paciente-list'),      # Lista todos os pacientes
+    path('pacientes/', PacienteListView.as_view(), name='paciente-list'),  # Lista todos os pacientes
     path('pacientes/novo/', PacienteCreateView.as_view(), name='paciente-create'),  # Cria um novo paciente
-    path('pacientes/<int:pk>/', PacienteDetailView.as_view(), name='paciente-detail'),  # Detalha um paciente específico
-    path('pacientes/<int:pk>/editar/', PacienteUpdateView.as_view(), name='paciente-update'),  # Atualiza um paciente específico
-    path('pacientes/<int:pk>/deletar/', PacienteDeleteView.as_view(), name='paciente-delete'),  # Deleta um paciente específico
+    path('pacientes/<uuid:pk>/', PacienteDetailView.as_view(), name='paciente-detail'),  # Detalha um paciente específico
+    path('pacientes/<uuid:pk>/editar/', PacienteUpdateView.as_view(), name='paciente-update'),  # Atualiza um paciente específico
+    path('pacientes/<uuid:pk>/deletar/', PacienteDeleteView.as_view(), name='paciente-delete'),  # Deleta um paciente específico
 ]
