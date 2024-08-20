@@ -19,3 +19,9 @@ Com a venv ativa va até o diretório api_paciente e execute:
 ```bash
 pip install -r requirements.txt
 ```
+
+## Executando o ambiente 
+Execute:
+```bash
+python3 manage.py runserver
+```
